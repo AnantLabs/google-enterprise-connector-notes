@@ -1,4 +1,4 @@
-#summary Install your Google Enterprise Connector for Lotus Notes
+#summary Install the Google Enterprise Connector for Lotus Notes
 
 = Introduction =
 The *Google Enterprise Connector For Lotus Notes* is installed entirely on your Domino infrastructure. 
@@ -26,3 +26,10 @@ You will need the following jars:
 {{{
 permission java.util.PropertyPermission "org.apache.commons.logging.simplelog.defaultlog", "write";
 }}}
+
+===Configure Notes Agents===
+The crawl and feed processes run as agents inside the Connector database. To ensure that the agents can complete without being prematurely terminated by the server’s agent manager, you should increase the *“Max LotusScript/Java execution time”* daytime and nighttime parameters for any server that will be taking part in the crawl and feed process. 
+
+Increase the setting in your Domino server document to 360 minutes. This setting can be found in your server document in the *“Agent Manager”* subsection under *“Server tasks”*. The screenshot below shows the *“Agent Manager”* tab in sample server document.
+
+[https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Agent Settings.png]
