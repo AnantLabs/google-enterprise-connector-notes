@@ -1,13 +1,21 @@
 #summary Install your Google Enterprise Connector for Lotus Notes
 
 = Introduction =
+The *Google Enterprise Connector For Lotus Notes* is installed entirely on your Domino infrastructure. 
 
-Add your content here.
+You should install the connector to a domino server to which you have administrative access.
 
 
-= Details =
+==Installation instructions==
+You will need to complete the following tasks to install the connector.
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+===Install Dependent Java Libraries===
+The Connector uses the Jakarta Commons HttpClient software to post content to the GSA so before any feeding can begin, these files must be copied to your Domino Server.
+
+
+Download the 
+copy them to Saturn’s external Java classes’ folder. One a Microsoft Windows platform, this folder is the “jvm\lib\ext” folder, which is located beneath the Domino program folder. For example: If you install Domino to “C:\Lotus\Domino”, you would copy your “jar” files to: “C:\Lotus\Domino\jvm\lib\ext”
+
+- commons-codec-1.3.jar
+- commons-httpclient-3.0.jar
+- commons-logging.jar
