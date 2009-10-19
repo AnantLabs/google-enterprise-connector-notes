@@ -1,12 +1,12 @@
 #summary Install the Google Enterprise Connector for Lotus Notes
 
-= Introduction =
+= Installation Instructions =
 The *Google Enterprise Connector For Lotus Notes* is installed entirely on your Domino infrastructure. 
 
 You should install the connector to a domino server to which you have administrative access.
 
 
-==Installation instructions==
+==Lotus Notes Environment Preparation==
 You will need to complete the following tasks to install the connector.
 
 ===Install Dependent Java Libraries===
@@ -30,8 +30,55 @@ permission java.util.PropertyPermission "org.apache.commons.logging.simplelog.de
 ===Configure Notes Agents===
 The crawl and feed processes run as agents inside the Connector database. To ensure that the agents can complete without being prematurely terminated by the server’s agent manager, you should increase the *“Max LotusScript/Java execution time”* daytime and nighttime parameters for any server that will be taking part in the crawl and feed process. 
 
-Increase the setting in your Domino server document to 360 minutes. This setting can be found in your server document in the *“Agent Manager”* subsection under *“Server tasks”*. The screenshot below shows the *“Agent Manager”* tab in sample server document.
+1. Increase the setting in your Domino server document to 360 minutes. This setting can be found in your server document in the *“Agent Manager”* subsection under *“Server tasks”*. The screenshot below shows the *“Agent Manager”* tab in sample server document.
 
 [https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/AgentSettings.png]
 
-http://code.google.com/images/code_sm.png
+
+2. Restart the Domino server for your changes to take effect.
+
+==GSA Configuration==
+===Configure the GSA for Integration===
+The GSA will only accept information from your Domino servers if you have first identified them through the GSA admin console. To identify your servers complete the following steps.
+
+1. Log into the GSA as a user of type *Administrator*, and selected the “Crawl and Index” menu option. 
+
+2.Complete the “Crawl URLs” section by adding the fully qualified host name of your Domino server. Below you can see how an example server is identified to the Appliance.
+
+[https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/FollowAndCrawl.png]
+
+*Note: You must include the _“http://”_ prefix and the trailing forward slash _“/”_ *
+
+Note. To find the fully qualified host name of your own servers, refer to the Basics tab of your Server documents in the Domino directory. 
+
+3. Select the “Feeds” option from the “Crawl and Index” menu and confirm that the GSA is ready to accept content from Saturn. Enter any IP Addresses from which the GSA can receive feeds, in a comma-separated format.
+
+===Configure the GSA for Authentication and Authorization===
+The Appliance supports a variety of options here including LDAP, forms based authentication, SSO, client certificates, and custom authentication schemes using the SAML standard. By default, the connector will be configured using the connector’s own implementation of the Google Authorization (AuthN) SPI. This implementation will authenticate users against the Domino directory on behalf of the GSA. To configure the GSA to use the Connectors AuthN implementation, complete the following steps.
+
+1. Login to the GSA as an administrator user and select Access Control from the Serving menu. Complete the three fields as described below:
+
+*Authentication - User Login URL*
+
+Enter the URL to the Login form in the Access Control database. The URL should take the form *"https://"* plus the *"fully qualified Domino server hostname/"* plus the *"access control database path"*, and *"/Login?OpenForm"*. For example:
+
+{{{
+https://notes.yourdomain.com/google-access-control.nsf/Login?OpenForm  
+}}}
+
+*Authentication - Artifact Service URL*
+
+Enter the URL to the authentication agent in the Access Control database. The URL should take the form “https://” plus the “fully qualified Domino server hostname/” plus the “access control database path”, and “/AuthN?OpenAgent”. For example:
+{{{
+https://notes.yourdomain.com/google-access-control.nsf/AuthN?OpenAgent
+}}}  
+ 
+*Authorization – Authorization Service URL*
+
+Enter the URL to the authorization agent in the Access Control database. The URL should take the form “https://” plus the “fully qualified Domino server hostname/” plus the “access control database path”, and “/AuthZ?OpenAgent”. For example:
+
+{{{
+https://notes.yourdomain.com/google-access-control.nsf/AuthZ?OpenAgent
+}}}
+
+An example of the Access Control form at the GSA is shown below:
