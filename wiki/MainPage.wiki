@@ -1,0 +1,12 @@
+#summary Start here to explore the Google Enterprise Connector for Lotus Notes!
+
+= Introduction =
+The Google Enterprise Connector for Lotus Notes allows you to easily integrate content securely with Lotus Notes, seamlessly integrating your Notes content with the rest of your enterprise content.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
