@@ -32,4 +32,6 @@ The crawl and feed processes run as agents inside the Connector database. To ens
 
 Increase the setting in your Domino server document to 360 minutes. This setting can be found in your server document in the *“Agent Manager”* subsection under *“Server tasks”*. The screenshot below shows the *“Agent Manager”* tab in sample server document.
 
-[https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Agent Settings.png]
+[https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/AgentSettings.png]
+
+http://code.google.com/images/code_sm.png
