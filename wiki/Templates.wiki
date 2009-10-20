@@ -1,0 +1,61 @@
+#summary Learn about Lotus Notes Templates
+
+=Templates=
+
+Most crawlers for Notes only support full content crawling of a Notes database. Invariably however, a Notes database will contain documents and fields that are used only to support the Notes application itself. This information adds no value to the search experience and as such should be excluded from the search index. C-Search offers this support through the use of its template profiles. These are explained below.
+
+Although the Google Enterprise Connector For Lotus Notes does support full content crawling through it’s – All documents and fields - template, the system also offers the far more effective selective content crawling by using template profiles to describe each type of database that will be crawled. These profiles tell the crawler which documents and fields to select as part of the crawl process for each assigned database. 
+
+In addition to defining the documents and fields to include in the index, templates in the Connector database are used to define the key meta data values that are passed to the GSA for each Notes document. These are the document title and document description values.
+
+==Adding a Template to the Database==
+
+To add a template to the Connector database, complete the following steps:
+
+ # Add a [Templates#add template document].
+ # Add form definition documents.
+ # Add sub form definition documents (optional).
+
+<a name="add">==Adding a Template Document==</a>
+
+To add a template to the Connector database, complete the following detailed steps:
+
+1.Select "Templates" from the menu.
+
+2.	Click the "New Template" button. You will be prompted to enter the template name.
+
+3.	Enter the name of the template and press “OK”. The system will now check to make sure that the name has not been used before. If the name is unique, the new template form will be displayed, otherwise you will be asked to try again.
+
+ 
+Complete the “Template Details” tab as follows:
+
+4.	Enter a brief description of the template.
+
+5.	Using the button provided choose a database that will be used as the source of design information for this template. Please note the following points:
+
+a.	The system uses the chosen database as the source of its form and sub-form lists and field information. 
+b.	The databases that you assign to this template later should share a common design with the database you choose here for the template information. 
+c.	The database you choose here provides design details only; it is not by default indexed by the system. 
+d.	You can choose to index the chosen database if you wish by adding a database parameters document later.
+
+6.	Enter the selection formula to define the documents that should be selected for inclusion in the index. The formula entered here should be written in the same way as a Notes view selection formula; for example, if you wanted to index all Person documents in the Domino Directory (and only Person documents) you would enter:
+
+Select Form = "Person"
+
+7.	The system can optionally automatically generate summary documents. Summary documents will be created automatically for any document that is covered by the selection formula entered above which do not have a form definition document defined. The default setting is “No” and to ensure best performance and meaningful results it is recommended that this setting remains unaltered. However, if the template being defined represents databases that meet both of the following rules, this setting can be changed to “Yes” and there is no requirement to add any form definition documents to the template.
+
+Auto-generate rules:
+
+1.	You require ALL fields to be indexed for all documents selected by the template selection formula
+2.	You will use field names for the generation of document titles and descriptions (rather than formulae).
+
+An example template details tab is shown below. This simple example shows the template parameters required to index the person and group documents in the Domino Directory.
+
+ 
+
+As mentioned above, to provide greater control over index contents, it is recommended that the auto-generate feature be disabled in favor of defining a definition document for each form that is covered by the document selection formula. Form definition documents are described below.
+
+
+A number of sample templates are provided with the Connector for common database types such as mail, document libraries, discussion databases, etc. These can be used as is or modified as required. You can also define your own profiles for any custom applications as required. 
+
+_*Note*: To ensure that system integrity is maintained at all times, it is only possible to create and edit template documents and their associated form and sub-form definition documents from the administration server._
