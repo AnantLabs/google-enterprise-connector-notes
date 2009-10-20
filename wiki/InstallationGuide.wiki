@@ -40,7 +40,7 @@ The crawl and feed processes run as agents inside the Connector database. To ens
 ===Configure the GSA for Integration===
 The GSA will only accept information from your Domino servers if you have first identified them through the GSA admin console. To identify your servers complete the following steps.
 
-*NOTE: All screenshots are from GSA version 6.2. These screens can be con
+*NOTE: All screenshots are from GSA version 6.2. These screens are illustrative only, as the Google Enterprise Connector For Lotus Notes is backwards compatible with all supported versions.
 
 1. Log into the GSA as a user of type *Administrator*, and selected the "Crawl and Index" menu option. 
 
@@ -52,7 +52,7 @@ The GSA will only accept information from your Domino servers if you have first 
 
 Note. To find the fully qualified host name of your own servers, refer to the Basics tab of your Server documents in the Domino directory. 
 
-3. Select the “Feeds” option from the “Crawl and Index” menu and confirm that the GSA is ready to accept content from Saturn. Enter any IP Addresses from which the GSA can receive feeds, in a comma-separated format.
+3. Select the “Feeds” option from the “Crawl and Index” menu and confirm that the GSA is ready to accept content from your Notes server. Enter any IP Addresses from which the GSA can receive feeds, in a comma-separated format.
 
 ===Configure the GSA for Authentication and Authorization===
 The Appliance supports a variety of options here including LDAP, forms based authentication, SSO, client certificates, and custom authentication schemes using the SAML standard. By default, the connector will be configured using the connector’s own implementation of the Google Authorization (AuthN) SPI. This implementation will authenticate users against the Domino directory on behalf of the GSA. To configure the GSA to use the Connectors AuthN implementation, complete the following steps.
@@ -102,7 +102,7 @@ _*Note*: If you want to use the custom stylesheet optimized for the Notes Connec
 
 The ID you sign the template with should have rights to run restricted agents on all servers where the Connector database is to be deployed and at least READER level access to all registered databases and their document sets.
 
-2.Create an instance of the Domino Connector database from the “google-connector.ntf” template in the root Notes data directory on Domino server Saturn.
+2.Create an instance of the Domino Connector database from the “google-connector.ntf” template in the root Notes data directory on your Domino server.
 
 Upon initial creation the database will automatically open to a new setup form. An example screenshot is provided below.
 
