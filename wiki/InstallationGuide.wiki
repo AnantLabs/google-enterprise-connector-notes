@@ -217,6 +217,6 @@ From the “Submitted” view, you can open the summary document to get more det
 
 From here you can view the details that are retained in the connector. The security tab shows which users and groups have reader or above access to this document. An example is shown below.
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DocSummary.PNG"/>
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DocSecurity.png"/>
  
 You will note that because there are values in the Readers token, that the GSA authentication method is set to “httpbasic”. This ensures that the GSA will seek authorization from Domino before showing this document to any user in the search results.
