@@ -1,4 +1,5 @@
 #summary Install the Google Enterprise Connector for Lotus Notes
+#labels Featured,Phase-Deploy
 
 = Installation Instructions =
 The *Google Enterprise Connector For Lotus Notes* is installed entirely on your Domino infrastructure. 
