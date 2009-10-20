@@ -31,7 +31,7 @@ The crawl and feed processes run as agents inside the Connector database. To ens
 
 1. Increase the setting in your Domino server document to 360 minutes or higher. This setting can be found in your server document in the *“Agent Manager”* subsection under *“Server tasks”*. The screenshot below shows the *“Agent Manager”* tab in sample server document.
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/AgentSettings.png"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/AgentSettings.png"/>
 
 
 2. Restart the Domino server for your changes to take effect.
@@ -46,7 +46,7 @@ The GSA will only accept information from your Domino servers if you have first 
 
 2.Complete the “Crawl URLs” section by adding the fully qualified host name of your Domino server. Below you can see how an example server is identified to the Appliance.
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/FollowAndCrawl.png" width="800"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/FollowAndCrawl.png" width="800"/>
 
 *Note: You must include the _"http://"_ prefix and the trailing forward slash _"/"_ *
 
@@ -84,7 +84,7 @@ https://notes.yourdomain.com/google-access-control.nsf/AuthZ?OpenAgent
 
 An example of the Access Control form at the GSA is shown below:
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Saml.png"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Saml.png"/>
 
 *Note: Both HTTP and HTTPS are supported. However, if you use HTTPS you must ensure that the GSA and your Domino servers can communicate over SSL. You should refer to the GSA Help and your Domino Administration Help database for more details on this subject.*
 
@@ -106,7 +106,7 @@ The ID you sign the template with should have rights to run restricted agents on
 
 Upon initial creation the database will automatically open to a new setup form. An example screenshot is provided below.
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/InitialScreen.png"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/InitialScreen.png"/>
 
 3. Set the appropriate value for your Administrators group, and your log retention period.
 
@@ -127,19 +127,19 @@ The Connector also respects groups and application specific database roles when 
 
 An example of a completed Google Search Appliance tab is shown below.
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/GSATab.png"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/GSATab.png"/>
 
 ===Configure your Domino Servers in the Connector===
 
 The Connector has a built in awareness of the servers in your Domino Organization. It uses this awareness to build the fully qualified URLs to each source document and attachment. The system also uses the server lists to build replica server lists for each database as you register them with the system. 
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DominoServer.png"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DominoServer.png"/>
 
 Before a database can be registered with the connector for crawling, the host server must first have been defined in a region document. 
 
 1. Click the "Add Region" button. The new region form will be displayed.
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Region.png"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Region.png"/>
 
 2. Enter a descriptive name for the region; e.g. *{{{CorpDomain}}}*
 
@@ -153,7 +153,7 @@ Before a database can be registered with the connector for crawling, the host se
 
 1. Ensure that the filename of your organisation’s Domino Directory is correct. The default is “names.nsf” and in most cases this will not need to be changed. If you are unsure, check with your Domino Administrator.
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/AccessControl.png"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/AccessControl.png"/>
 
 2. To limit the number of users cached by the access control system, enter a standard Notes document selection formula into the User selection formula field. Tip: Where you have a large number of users (>25,000 users) and your testing is restricted to just a subset of those users, entering a selection formula here will offer optimum “Directory Monitor” performance as it prevents the system from caching unnecessary user details.
 
@@ -165,7 +165,7 @@ It is recommended that you now open the access control database, and select the 
 
 5. Click on the Advanced tab and enable the logging of authorization requests as shown below. This allows the system to record each incoming request from the GSA and the response. This is particularly useful for checking the incoming username format provided by the GSA.
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/AdvancedAccess.png"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/AdvancedAccess.png"/>
 
 _*Note*: Whilst this feature is useful for checking your configuration, the logging of authorization requests should not be used in a production environment for performance reasons._
 
@@ -197,7 +197,7 @@ To register a new database, complete the following steps.
 
 5. Save the database using the button provided and exit. The next time the crawler runs the desired content will be added to the system. An example of the completed database parameters document is shown below:
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Database.png"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Database.png"/>
 
 You are encouraged to read the page that covers [Templates template profile management] to gain a full appreciation of the options that are available to in the areas of selective indexing and document transformation.
 
@@ -205,18 +205,18 @@ You are encouraged to read the page that covers [Templates template profile mana
 
 Once the crawler has run, the databases view will be updated to show the numbers of documents indexed and when as shown in the screenshot below.
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DBCount.png"/> 
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DBCount.png"/> 
 
 In addition you can refer to the “Submitted” view to see the document stubs that are retained in the connector that support the ongoing synchronization between the original Notes database and the Appliance. The submitted view following the crawling of our Domino Directory is shown below.
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Submitted.png"/> 
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Submitted.png"/> 
 
 From the “Submitted” view, you can open the summary document to get more detailed information. To do this select a document and press the “Open” action bar button, and then choose Summary details. The summary document will be displayed as shown in the screenshot below.
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DocSummary.PNG"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DocSummary.PNG"/>
 
 From here you can view the details that are retained in the connector. The security tab shows which users and groups have reader or above access to this document. An example is shown below.
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DocSecurity.png"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DocSecurity.png"/>
  
 You will note that because there are values in the Readers token, that the GSA authentication method is set to “httpbasic”. This ensures that the GSA will seek authorization from Domino before showing this document to any user in the search results.
