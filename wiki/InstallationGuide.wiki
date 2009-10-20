@@ -94,6 +94,8 @@ An example of the Access Control form at the GSA is shown below:
  # Set the “Force secure connections when serving?” field to “*Use HTTPS when serving secure results, but not when serving public results.*”.
  # Save these settings with the “Save Setup” button and logout of the GSA admin console.
 
+_*Note*: If you want to use the custom stylesheet optimized for the Notes Connector, you should upload this to your frontend of choice on the GSA via Serving > Front Ends, using the stylesheet file *domino_stylesheet.xslt*.
+
 ==Connector Installation==
 ===Create the Google Enterprise Connector For Lotus Notes databases===
 1. Copy the two templates (.NTF files) provided to your Notes client data directory and using the Domino Administrator client, sign them with a trusted ID. 
@@ -108,7 +110,7 @@ Upon initial creation the database will automatically open to a new setup form. 
 
 3. Set the appropriate value for your Administrators group, and your log retention period.
 
-*Configure the GSA Settings* 
+===Configure the GSA Settings===
  # Click on the Google Search Appliance Tab
  # Enter the fully qualified host name of the appliance. The host name should include the Feeder listener’s port number and folder. This is *19900/xmlfeed*. For example 
 {{{
@@ -127,7 +129,7 @@ An example of a completed Google Search Appliance tab is shown below.
 
 <img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/GSATab.png"/>
 
-*Configure your Domino Servers in the Connector*
+===Configure your Domino Servers in the Connector===
 
 The Connector has a built in awareness of the servers in your Domino Organization. It uses this awareness to build the fully qualified URLs to each source document and attachment. The system also uses the server lists to build replica server lists for each database as you register them with the system. 
 
@@ -147,7 +149,7 @@ Before a database can be registered with the connector for crawling, the host se
 
 5. Press the “Save and Exit” button to return to the system setup form. 
 
-*Configure Access Control*
+===Configure Access Control===
 
 1. Ensure that the filename of your organisation’s Domino Directory is correct. The default is “names.nsf” and in most cases this will not need to be changed. If you are unsure, check with your Domino Administrator.
 
@@ -179,3 +181,42 @@ _*Note*: The authorization mechanism respects usernames and group names in datab
 
 You are now ready to begin registering databases with the connector.
 
+===Register Databases to be Searched===
+
+Before a database can be crawled by the system a database parameters document must exist. Databases can be registered one at a time, in bulk, or using the API provided. For more details you should refer to the full Installation and Administration guide. In this scenario, we will register the Domino Directory to demonstrate the process.
+
+To register a new database, complete the following steps.
+
+1. Select "Databases" from the Connector menu.
+
+2. Click the "New-Database" button. The new database form will be displayed.
+
+3. Select the Domino Directory from your Domino server using the button provided. 
+
+4. Select the template to apply to this database using the button provided. See [Templates templates] for more information about template selection.
+
+5. Save the database using the button provided and exit. The next time the crawler runs the desired content will be added to the system. An example of the completed database parameters document is shown below:
+
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Database.png"/>
+
+You are encouraged to read the page that covers [Templates template profile management] to gain a full appreciation of the options that are available to in the areas of selective indexing and document transformation.
+
+===Checking the Crawler===
+
+Once the crawler has run, the databases view will be updated to show the numbers of documents indexed and when as shown in the screenshot below.
+
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DBCount.png"/> 
+
+In addition you can refer to the “Submitted” view to see the document stubs that are retained in the connector that support the ongoing synchronization between the original Notes database and the Appliance. The submitted view following the crawling of our Domino Directory is shown below.
+
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Submitted.png"/> 
+
+From the “Submitted” view, you can open the summary document to get more detailed information. To do this select a document and press the “Open” action bar button, and then choose Summary details. The summary document will be displayed as shown in the screenshot below.
+
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DocSummary.PNG"/>
+
+From here you can view the details that are retained in the connector. The security tab shows which users and groups have reader or above access to this document. An example is shown below.
+
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DocSummary.PNG"/>
+ 
+You will note that because there are values in the Readers token, that the GSA authentication method is set to “httpbasic”. This ensures that the GSA will seek authorization from Domino before showing this document to any user in the search results.
