@@ -1,6 +1,7 @@
 #summary Learn about Lotus Notes Templates
 
 =Templates=
+*NOTE: This page contains instructions for configuration of Lotus Notes Templates. You should make sure you have access to a Notes Administrator to carry out these tasks.*
 
 Most crawlers for Notes only support full content crawling of a Notes database. Invariably however, a Notes database will contain documents and fields that are used only to support the Notes application itself. This information adds no value to the search experience and as such should be excluded from the search index. the Google Enterprise Connector for Lotus Notes offers this support through the use of its template profiles. 
 
@@ -66,9 +67,9 @@ Select Form = "Person"
 }}}
  * The system can optionally automatically generate summary documents. Summary documents will be created automatically for any document that is covered by the selection formula entered above which do not have a form definition document defined. The default setting is “No” and to ensure best performance and meaningful results it is recommended that this setting remains unaltered. 
 
-However, if the template being defined represents databases that meet both of the following rules, this setting can be changed to “Yes” and there is no requirement to add any form definition documents to the template.
 
 ===Auto-generate rules===
+If the template being defined represents databases that meet both of the following rules, you can use auto generation, and there is no requirement to add any form definition documents to the template.
  # You require ALL fields to be indexed for all documents selected by the template selection formula
  # You will use field names for the generation of document titles and descriptions (rather than formulae).
 
@@ -76,7 +77,57 @@ To provide greater control over index contents, it is recommended that the auto-
 
 An example template details tab is shown below. This simple example shows the template parameters required to index the person and group documents in the Domino Directory.
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/FormTemplate.png"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/FormTemplate.png"/>
 
+===Form Details===
+Form documents identify the fields that should be extracted from each of the documents being indexed. They also contain the formulae required to build the title and description values that are held on each index document.
+
+1. Switch to the Form Details tab. An example screen is shown below:
+
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/FormDefinition.png"/> 
+
+2. Press the “Add Form Definition” button. Select the desired form from the list presented and press “OK”. The new form document will be displayed for completion. An example screen is shown below:
+
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/FormDetails.png"/>
+ 
+3. Enter a formula to generate the search results text. For example, if you were defining the form document for the Person form in the Domino Directory and you wanted to display the name and telephone number of each person in the search results, you might enter the following formula: 
+{{{
+FirstName + " " + LastName + " (" + OfficePhoneNumber + ")"
+}}}
+ 
+4. Enter a formula to generate the description of the document. In our example of the Domino Directory, if you wished to show each person's job title, department and country as the description of the document you might enter the following formula:
+{{{
+"Job Title " + JobTitle + ", Department " + Department + ", Country " + Country
+}}}
+_*Tip*: Use the “Validate formulae” button to test the formula syntax._
+
+5. Switch to the “Field Details” tab. An example screen is shown below using the Person form from the address book. The system automatically presents the fields on the form for selection.
+
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/FieldDetails.png"/> 
+
+6. Enter the names of any additional fields you wish to include in the index that are not shown in the auto-generated list. This allows you to index fields, which may be present on the documents, but not on the form itself as might be the case where a field has been added to a document through the use of an agent. Separate multiple values with a comma or a semi-colon.
+
+7. Select the fields that you wish to extract from each source document that uses this form.
+
+8. Press the “Save” button to save the form definition document.
+
+9. If the form contains sub forms, continue from step 10, otherwise press the “Exit” button to return to the template document.
+
+10. To add a sub form definition, move to the “Sub form Details” tab, and press the “Add Sub form Details” button. 
+
+11. Select the desired sub form from the list presented and press “OK”. The new sub form document will be displayed for completion.
+
+12. Select the fields that you wish to extract from each source document that uses this sub form.
+
+13. Press the “Save” button to save the sub form definition document.
+
+14. Press the “Exit” button to return to the form definition document.
+
+Repeat steps 10 to 14 to add all sub forms as required for the current form.
+
+Repeat steps 1 to 9 to add all forms as required for the current template.
+
+----
 
 _*Note*: To ensure that system integrity is maintained at all times, it is only possible to create and edit template documents and their associated form and sub-form definition documents from the administration server._
+
