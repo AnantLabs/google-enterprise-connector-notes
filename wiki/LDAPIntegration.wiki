@@ -42,3 +42,4 @@ _*Note*: If you change the formula you will need to refresh the access control l
 
 _*Note*: There is no need to complete the Authentication SPI fields here as you are using LDAP for authentication, not Domino as described in the [InstallationGuide installation guide]._
 
+*Other tasks are as documented in the [InstallationGuide installation guide].*
