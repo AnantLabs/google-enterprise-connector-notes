@@ -27,7 +27,7 @@ permission java.util.PropertyPermission "org.apache.commons.logging.simplelog.de
 }}}
 
 ===Configure Notes Agents===
-The crawl and feed processes run as agents inside the Connector database. To ensure that the agents can complete without being prematurely terminated by the server’s agent manager, you should increase the *“Max LotusScript/Java execution time”* daytime and nighttime parameters for any server that will be taking part in the crawl and feed process. 
+The crawl and feed processes run as agents inside the Connector database. To ensure that the agents can complete without being prematurely terminated by the server’s agent manager, you should increase the *“Max Lotusscript`/`Java execution time”* daytime and nighttime parameters for any server that will be taking part in the crawl and feed process. 
 
 1. Increase the setting in your Domino server document to 360 minutes. This setting can be found in your server document in the *“Agent Manager”* subsection under *“Server tasks”*. The screenshot below shows the *“Agent Manager”* tab in sample server document.
 
