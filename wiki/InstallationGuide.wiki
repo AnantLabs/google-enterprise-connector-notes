@@ -46,7 +46,7 @@ The GSA will only accept information from your Domino servers if you have first 
 
 2.Complete the “Crawl URLs” section by adding the fully qualified host name of your Domino server. Below you can see how an example server is identified to the Appliance.
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/FollowAndCrawl.png"/>
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/FollowAndCrawl.png" width="800"/>
 
 *Note: You must include the _"http://"_ prefix and the trailing forward slash _"/"_ *
 
