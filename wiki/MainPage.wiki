@@ -12,7 +12,6 @@ Read the core [InstallationGuide Installation Guide] now.
 
 Stay tuned for documentation on:
  * Selective indexing
- * LDAP integration
  * Resetting and rolling back your index
  * Distributed crawling
 
