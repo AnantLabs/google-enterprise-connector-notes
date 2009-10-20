@@ -16,7 +16,7 @@ To add a template to the Connector database, complete the following steps:
  # Add form definition documents.
  # Add sub form definition documents (optional).
 
-<a name="add">==Adding a Template Document==</a>
+==Adding a Template Document==
 
 To add a template to the Connector database, complete the following detailed steps:
 
@@ -55,7 +55,7 @@ An example template details tab is shown below. This simple example shows the te
 
 As mentioned above, to provide greater control over index contents, it is recommended that the auto-generate feature be disabled in favor of defining a definition document for each form that is covered by the document selection formula. Form definition documents are described below.
 
-
+<a name="add">muppet</a>
 A number of sample templates are provided with the Connector for common database types such as mail, document libraries, discussion databases, etc. These can be used as is or modified as required. You can also define your own profiles for any custom applications as required. 
 
 _*Note*: To ensure that system integrity is maintained at all times, it is only possible to create and edit template documents and their associated form and sub-form definition documents from the administration server._
