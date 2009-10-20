@@ -87,3 +87,65 @@ An example of the Access Control form at the GSA is shown below:
 <img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Saml.png"/>
 
 *Note: Both HTTP and HTTPS are supported. However, if you use HTTPS you must ensure that the GSA and your Domino servers can communicate over SSL. You should refer to the GSA Help for more details on this subject.*
+
+===Set the serve protocol===
+
+ # From the “Administration” menu, select “SSL Settings”.
+ # Set the “Force secure connections when serving?” field to “*Use HTTPS when serving secure results, but not when serving public results.*”.
+ # Save these settings with the “Save Setup” button and logout of the GSA admin console.
+
+==Connector Installation==
+===Create the Google Enterprise Connector For Lotus Notes databases===
+1. Copy the two templates (.NTF files) provided to your Notes client data directory and using the Domino Administrator client, sign them with a trusted ID. 
+
+The ID you sign the template with should have rights to run restricted agents on all servers where the Connector database is to be deployed and at least READER level access to all registered databases and their document sets.
+
+2.Create an instance of the Domino Connector database from the “google-connector.ntf” template in the root Notes data directory on Domino server Saturn.
+
+Upon initial creation the database will automatically open to a new setup form. An example screenshot is provided below.
+
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/InitialScreen.png"/>
+
+3. Set the appropriate value for your Administrators group, and your log retention period.
+
+*Configure the GSA Settings* 
+ # Click on the Google Search Appliance Tab
+ # Enter the fully qualified host name of the appliance. The host name should include the Feeder listener’s port number and folder. This is *19900/xmlfeed*. For example 
+{{{
+gsa.yourdomain.com:19900/xmlfeed
+}}}
+For more information please refer to the GSA help materials.
+
+2. Select a Security Mechanism,
+Important: If you leave the GSA authentication method set to “none” then ALL Notes documents will be sent to the GSA as public documents irrespective of the restrictions on the Notes document itself. Any other setting will ensure that the GSA checks for authorization for each result that does not by default allow reader access to everyone.
+
+It is also worth noting that the Connector crawler will only mark a document as secure for the GSA where security is imposed against the document either through database ACL restrictions, or document level readers/authors fields, or a combination of both. If a document does not have security imposed, it will be marked as public when it is sent to the GSA.
+
+The Connector also respects groups and application specific database roles when deciding who has reader access to each Notes document.
+
+An example of a completed Google Search Appliance tab is shown below.
+
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/GSATab.png"/>
+
+*Configure your Domino Servers in the Connector*
+The Connector has a built in awareness of the servers in your Domino Organization. It uses this awareness to build the fully qualified URLs to each source document and attachment. The system also uses the server lists to build replica server lists for each database as you register them with the system. 
+
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DominoServer.png"/>
+
+Before a database can be registered with the connector for crawling, the host server must first have been defined in a region document. 
+
+1. Click the "Add Region" button. The new region form will be displayed.
+
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Region.png"/>
+
+2. Enter a descriptive name for the region; e.g. *{{{CorpDomain}}}*
+
+3. Enter the domain name for the region.
+
+4. Select the appropriate servers from the list of servers in your Domino directory using the button provided. The screenshot below shows the completed region document.
+
+5. Press the “Save and Exit” button to return to the system setup form. 
+
+
+
+
