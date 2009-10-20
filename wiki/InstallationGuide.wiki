@@ -31,7 +31,7 @@ The crawl and feed processes run as agents inside the Connector database. To ens
 
 1. Increase the setting in your Domino server document to 360 minutes. This setting can be found in your server document in the *“Agent Manager”* subsection under *“Server tasks”*. The screenshot below shows the *“Agent Manager”* tab in sample server document.
 
-[https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/AgentSettings.png]
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/AgentSettings.png"/>
 
 
 2. Restart the Domino server for your changes to take effect.
@@ -46,7 +46,7 @@ The GSA will only accept information from your Domino servers if you have first 
 
 2.Complete the “Crawl URLs” section by adding the fully qualified host name of your Domino server. Below you can see how an example server is identified to the Appliance.
 
-[https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/FollowAndCrawl.png]
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/FollowAndCrawl.png"/>
 
 *Note: You must include the _"http://"_ prefix and the trailing forward slash _"/"_ *
 
@@ -84,6 +84,6 @@ https://notes.yourdomain.com/google-access-control.nsf/AuthZ?OpenAgent
 
 An example of the Access Control form at the GSA is shown below:
 
-[https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Saml.png]
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Saml.png"/>
 
 *Note: Both HTTP and HTTPS are supported. However, if you use HTTPS you must ensure that the GSA and your Domino servers can communicate over SSL. You should refer to the GSA Help for more details on this subject.*
