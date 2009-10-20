@@ -135,17 +135,11 @@ Occasionally you may need to modify a set of template parameters but the origina
 To reassign a template to a new database, complete the following steps:
 
  # Select the “Templates” option from the menu.
-
  # Locate the desired template and double click to open the document.
-
  # Press the “Edit” button to take the document into edit mode.
-
  # Press the “Change Source Database” button, and answer, “Yes” to the warning prompt.
-
  # From the Open-Database dialogue, locate and select the new database on one of your servers and press the “Open” button.
-
  # Press the “Save” action bar button.
-
  # You can now make changes to the template parameters as required.
 
 ----
