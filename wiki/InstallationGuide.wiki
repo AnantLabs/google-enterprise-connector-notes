@@ -29,7 +29,7 @@ permission java.util.PropertyPermission "org.apache.commons.logging.simplelog.de
 ===Configure Notes Agents===
 The crawl and feed processes run as agents inside the Connector database. To ensure that the agents can complete without being prematurely terminated by the server’s agent manager, you should increase the *“Max Lotusscript`/`Java execution time”* daytime and nighttime parameters for any server that will be taking part in the crawl and feed process. 
 
-1. Increase the setting in your Domino server document to 360 minutes. This setting can be found in your server document in the *“Agent Manager”* subsection under *“Server tasks”*. The screenshot below shows the *“Agent Manager”* tab in sample server document.
+1. Increase the setting in your Domino server document to 360 minutes or higher. This setting can be found in your server document in the *“Agent Manager”* subsection under *“Server tasks”*. The screenshot below shows the *“Agent Manager”* tab in sample server document.
 
 <img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/AgentSettings.png"/>
 
@@ -86,7 +86,7 @@ An example of the Access Control form at the GSA is shown below:
 
 <img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Saml.png"/>
 
-*Note: Both HTTP and HTTPS are supported. However, if you use HTTPS you must ensure that the GSA and your Domino servers can communicate over SSL. You should refer to the GSA Help for more details on this subject.*
+*Note: Both HTTP and HTTPS are supported. However, if you use HTTPS you must ensure that the GSA and your Domino servers can communicate over SSL. You should refer to the GSA Help and your Domino Administration Help database for more details on this subject.*
 
 ===Set the serve protocol===
 
@@ -94,7 +94,7 @@ An example of the Access Control form at the GSA is shown below:
  # Set the “Force secure connections when serving?” field to “*Use HTTPS when serving secure results, but not when serving public results.*”.
  # Save these settings with the “Save Setup” button and logout of the GSA admin console.
 
-_*Note*: If you want to use the custom stylesheet optimized for the Notes Connector, you should upload this to your frontend of choice on the GSA via Serving > Front Ends, using the stylesheet file *domino_stylesheet.xslt*.
+_*Note*: If you want to use the custom stylesheet optimized for the Notes Connector, you should upload this to your frontend of choice on the GSA via Serving > Front Ends, using the stylesheet file *domino_stylesheet.xslt*. This is an example stylesheet that shows how you can use the meta data sent from the connector to server custom results at the GSA. Note: This stylesheet does not consider any other result type except Notes so it will need to be modified to present other data sources at the GSA in any production environment. 
 
 ==Connector Installation==
 ===Create the Google Enterprise Connector For Lotus Notes databases===
@@ -157,11 +157,11 @@ Before a database can be registered with the connector for crawling, the host se
 
 2. To limit the number of users cached by the access control system, enter a standard Notes document selection formula into the User selection formula field. Tip: Where you have a large number of users (>25,000 users) and your testing is restricted to just a subset of those users, entering a selection formula here will offer optimum “Directory Monitor” performance as it prevents the system from caching unnecessary user details.
 
-3. If you are using the Domino’s own authentication with the name that a user is known by at the GSA will match that user’s Notes name, you can leave the “Formula to use to generate user name field “ blank. Otherwise set a Notes Selection Formula 
+3. If you are using the Domino’s own authentication with the name that a user is known by at the GSA will match that user’s Notes name, you can leave the “Formula to use to generate user name field “ blank. Otherwise enter a Formula that can be used to map the Domino name to the username correctly. 
 
 4. Press the “Create Access Control Database” button. The access control database will now be created on your Domino server. The Access Control tab will now refresh and you will see the “Open Access Control Database” button. You can of course open the database when you need to using the “File-Database-Open” menu option from your Notes Client. 
 
-it is recommended that you now open the access control database, and select the System Setup menu option to reveal the access control setup profile. 
+It is recommended that you now open the access control database, and select the System Setup menu option to reveal the access control setup profile. 
 
 5. Click on the Advanced tab and enable the logging of authorization requests as shown below. This allows the system to record each incoming request from the GSA and the response. This is particularly useful for checking the incoming username format provided by the GSA.
 
@@ -169,7 +169,7 @@ it is recommended that you now open the access control database, and select the 
 
 _*Note*: Whilst this feature is useful for checking your configuration, the logging of authorization requests should not be used in a production environment for performance reasons._
 
-Typically you should leave the "*Response to send for non Notes resourcs*" to *indeterminate" so that the GSA will revert to it's default Authorization  mechanism.
+Typically you should leave the "*Response to send for non Notes resources*" to *indeterminate" so that the GSA will revert to it's default Authorization  mechanism.
 
 6. Press the “Save and Exit” button to close the Access Control database set-up profile. Within an hour the Directory Monitor will have run and built the necessary cache information about your users and groups so that is can handle incoming authorization requests from the GSA.
 
