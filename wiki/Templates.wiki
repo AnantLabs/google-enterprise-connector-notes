@@ -1,4 +1,4 @@
-#summary Learn about Lotus Notes Templates
+#summary Use Templates to enrich your search
 
 =Templates=
 *NOTE: This page contains instructions for configuration of Lotus Notes Templates. You should make sure you have access to a Notes Administrator to carry out these tasks.*
@@ -127,7 +127,27 @@ Repeat steps 10 to 14 to add all sub forms as required for the current form.
 
 Repeat steps 1 to 9 to add all forms as required for the current template.
 
+===Reassigning a template===
+The Connector template definition documents read the design of the database originally chosen when the template document was first created to get form, sub-form and field details to assist in the completion of template information. 
+
+Occasionally you may need to modify a set of template parameters but the original database is no longer available for reference. In such instances, you can re-assign the template profile to a new database. Should you ever need to do this however, you should be sure that both the old and new databases share a common design.
+
+To reassign a template to a new database, complete the following steps:
+
+ # Select the “Templates” option from the menu.
+
+ # Locate the desired template and double click to open the document.
+
+ # Press the “Edit” button to take the document into edit mode.
+
+ # Press the “Change Source Database” button, and answer, “Yes” to the warning prompt.
+
+ # From the Open-Database dialogue, locate and select the new database on one of your servers and press the “Open” button.
+
+ # Press the “Save” action bar button.
+
+ # You can now make changes to the template parameters as required.
+
 ----
 
 _*Note*: To ensure that system integrity is maintained at all times, it is only possible to create and edit template documents and their associated form and sub-form definition documents from the administration server._
-
