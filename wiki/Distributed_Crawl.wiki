@@ -1,8 +1,4 @@
-#summary One-sentence summary of this page.
-
-= Introduction =
-The Connector supports two deployment modes, “centralized” and “distributed” which is chosen as part of the setup process. These two modes are described below.
-
+#summary The Connector supports two deployment modes, “centralized” and “distributed” which is chosen as part of the setup process
 
 ==Deployment of the Connector – Distributed crawler mode==
 
@@ -17,7 +13,8 @@ In centralized mode, the Connector is installed onto a single Domino server. As 
 
 For example, if the Connector database is installed onto a server named “Venus” and you wanted to index a database on “Saturn”, then you would update Saturn’s server document to include the server Venus in it’s “Trusted server” list. A screenshot is shown below, but please refer to your Domino Administrator guide for more details on configuring trusted servers.
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DistConfig.png" width="500" />
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DistConfig.png" width="400" />
 
 This diagram shows how the crawl and feed process differs depending upon the mode selected.
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DistCrawlDiagram.png" />
+
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DistCrawlDiagram.png" width="750"/>
