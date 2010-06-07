@@ -5,7 +5,7 @@ Templates can define the indexing parameters for potentially hundreds of databas
 
 
 = Details =
-To rebuild a single database see [http://code.google.com/p/google-enterprise-connector-notes/wiki/Rebuild_single_database?ts=1275929130&updated=Rebuild_single_database Rebuild A Single Database]
+To rebuild a single database see [http://code.google.com/p/google-enterprise-connector-notes/wiki/Rebuild_single_database?ts=1275929130&updated=Rebuild_single_database Rebuild A Single Database].
 To rebuild the index documents for all databases that use a specific template, complete the following steps:
 
   # Select "Templates" from the menu.
