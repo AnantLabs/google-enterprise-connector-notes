@@ -9,9 +9,20 @@ To rebuild the index for all databases that use a template, see [http://code.goo
 
 To rebuild the index for a single database, complete the following steps:
 
-  # Open the Connector database from the server that is currently responsible for managing the database you wish to modify (distributed mode) or the administration server (centralized mode).
-  # Select "Databases" from the menu.
-  # Locate the database in the view and open the document.
-  # Press the "Edit button".
-  # Press the "Roll-back" button. At this point the following dialogue will appear:
-<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/RebuildDB.tif" />
+1.  Open the Connector database from the server that is currently responsible for managing the database you wish to modify (distributed mode) or the administration server (centralized mode).
+2.  Select "Databases" from the menu.
+3.  Locate the database in the view and open the document.
+4.  Press the "Edit button".
+5.  Press the "Roll-back" button. At this point the following dialogue will appear:
+
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/RebuildDB.png" width="600" height="200"/>
+
+If you wish to activate a full rebuild the index for the source database, press OK. Alternatively, you can roll the database back by a specific number of months, days, and hours. Rolling back is useful if your source database has become corrupt and a restore from backup has been made. In this instance you can wind the index back to a time shortly before the backup was taken. 
+
+At this point the following events will occur:
+
+  * All index documents (or documents added since the rollback time) for this database will be marked for removal at the GSA. A prompt showing the number of documents removed will be displayed.
+  * The last indexed date will be cleared (or set back to the rollback time). This ensures that a full index rebuild (or an incremental build from the rollback time) of this database will occur the next time the monitored database is indexed.
+  * The database parameters document will be switched to read mode.
+
+6.  Press "Exit" to close the database parameters document.
