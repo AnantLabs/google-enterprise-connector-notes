@@ -1,0 +1,23 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+The Connector supports two deployment modes, “centralized” and “distributed” which is chosen as part of the setup process. These two modes are described below.
+
+
+==Deployment of the Connector – Distributed crawler mode==
+
+In distributed mode, the Connector database is replicated to multiple Domino servers and the crawl process is shared amongst these servers. In this mode the crawler on each server is restricted to crawling databases only on the host server. As the Connector is replicated, each server’s updates (index stubs) can be seen from any other replica providing a consistent view of GSA entries across all instances. In addition, a built in locking mechanism ensures that each registered database can only be managed from one single instance of the Connector. This ensures that Notes documents can never be duplicated at the GSA thus the integrity of the GSA index is guaranteed at all times.
+
+Distributed mode is useful where there is a large geographical spread of servers.
+
+
+==Deployment of the Connector – Centralized crawler mode==
+
+In centralized mode, the Connector is installed onto a single Domino server. As part of the setup process, the administrator will choose the Connector’s Administration Server. This is the server that will be responsible for all index updates and request handling. The only additional requirement is that the administration server is listed as a trusted server in each remote server’s Server document in the Domino Directory.
+
+For example, if the Connector database is installed onto a server named “Venus” and you wanted to index a database on “Saturn”, then you would update Saturn’s server document to include the server Venus in it’s “Trusted server” list. A screenshot is shown below, but please refer to your Domino Administrator guide for more details on configuring trusted servers.
+
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DistConfig.png" width="500" />
+
+This diagram shows how the crawl and feed process differs depending upon the mode selected.
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DistCrawlDiagram.png" />
