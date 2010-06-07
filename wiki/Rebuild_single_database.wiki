@@ -26,3 +26,10 @@ At this point the following events will occur:
   * The database parameters document will be switched to read mode.
 
 6.  Press "Exit" to close the database parameters document.
+
+*NOTE: The following rules apply:*
+
+  * When the crawler is in distributed mode it is only possible to carry out this action from the server responsible for indexing the database concerned.
+  * When the crawler is in centralized mode it is only possible to carry out this action from the administration server.
+  * The database must be enabled.
+  * The “Roll-back” button is only visible for databases that have been indexed previously.
