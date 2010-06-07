@@ -7,18 +7,10 @@ Templates can define the indexing parameters for potentially hundreds of databas
 = Details =
 To rebuild the index documents for all databases that use a specific template, complete the following steps:
 
-# Select "Templates" from the menu.
-# Open the desired template document, and press the "Edit" button.
-# Press the "Rebuild Database Indexes" button. At this point you will be asked if you wish to continue with this action. Select "Yes" to rebuild all indexes. Another prompt confirming that the rebuild will take place will appear. 
-# Press "OK" at this prompt to close the prompt and the template document.
+  # Select "Templates" from the menu.
+  # Open the desired template document, and press the "Edit" button.
+  # Press the "Rebuild Database Indexes" button. At this point you will be asked if you wish to continue with this action. Select "Yes" to rebuild all indexes. Another prompt confirming that the rebuild will take place will appear. 
+  # Press "OK" at this prompt to close the prompt and the template document.
 
-The following rules apply
+*NOTE: It is only possible to carry out this action from the administration server.*
 
-* *It is only possible to carry out this action from the administration server.*
-
-
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
