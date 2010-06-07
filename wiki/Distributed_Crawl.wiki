@@ -17,4 +17,4 @@ For example, if the Connector database is installed onto a server named “Venus
 
 This diagram shows how the crawl and feed process differs depending upon the mode selected.
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DistCrawlDiagram.png" width="750"/>
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DistCrawlDiagram.png" width="500"/>
