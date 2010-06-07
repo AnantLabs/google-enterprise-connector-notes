@@ -1,0 +1,16 @@
+#summary Rebuilding (roll-back) the index for a single database
+
+= Introduction =
+The Connector allows an index to be rebuilt for each monitored database. Unlike disabling a database that deletes index content and prevents further indexing of a particular database, rebuilding merely flushes the index content for the particular database. When the crawler next runs, the content will be rebuilt and added back to the GSA.
+
+
+= Details =
+To rebuild the index for all databases that use a template, see [http://code.google.com/p/google-enterprise-connector-notes/wiki/Rebuilding_databases Rebuilding Databases].
+
+To rebuild the index for a single database, complete the following steps:
+
+  # Open the Connector database from the server that is currently responsible for managing the database you wish to modify (distributed mode) or the administration server (centralized mode).
+  # Select "Databases" from the menu.
+  # Locate the database in the view and open the document.
+  # Press the "Edit button".
+  # Press the "Roll-back" button. At this point the following dialogue will appear:
