@@ -1,0 +1,24 @@
+#summary Rebuilding the index for all databases that use the same template
+
+= Introduction =
+Templates can define the indexing parameters for potentially hundreds of databases. The index for an individual database may be rebuilt from the databases parameters document as described in the previous section. However, if there is a change to the template (for example, you wish to include some additional fields from a particular form), you can rebuild all databases that use that template in one step rather than rebuilding the index for each database individually.
+
+
+= Details =
+To rebuild the index documents for all databases that use a specific template, complete the following steps:
+
+# Select "Templates" from the menu.
+# Open the desired template document, and press the "Edit" button.
+# Press the "Rebuild Database Indexes" button. At this point you will be asked if you wish to continue with this action. Select "Yes" to rebuild all indexes. Another prompt confirming that the rebuild will take place will appear. 
+# Press "OK" at this prompt to close the prompt and the template document.
+
+The following rules apply
+
+* *It is only possible to carry out this action from the administration server.*
+
+
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
