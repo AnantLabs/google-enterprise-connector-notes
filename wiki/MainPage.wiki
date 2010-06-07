@@ -16,7 +16,6 @@ Read about [Rebuilding_databases Rebuilding All Databases from a Template].
 
 Stay tuned for documentation on:
  * Selective indexing
- * Resetting and rolling back your index
  * Distributed crawling
 
 
