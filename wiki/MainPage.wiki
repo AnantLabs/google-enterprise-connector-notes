@@ -8,6 +8,10 @@ The Google Enterprise Connector for Lotus Notes is a secure, highly flexible cra
 
 Read the core [InstallationGuide Installation Guide] now.
 
+Read about [Rebuild_single_database Rebuilding a Single Database].
+
+Read about [Rebuilding_databases Rebuilding All Databases from a Template].
+
 *Still to come*
 
 Stay tuned for documentation on:
