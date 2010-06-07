@@ -14,3 +14,4 @@ To rebuild the index for a single database, complete the following steps:
   # Locate the database in the view and open the document.
   # Press the "Edit button".
   # Press the "Roll-back" button. At this point the following dialogue will appear:
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/RebuildDB.tif" />
