@@ -12,12 +12,12 @@ Read about [Rebuild_single_database Rebuilding a Single Database].
 
 Read about [Rebuilding_databases Rebuilding All Databases from a Template].
 
+Read about [Distributed_Crawl Configuring for Distributed crawling].
+
 *Still to come*
 
 Stay tuned for documentation on:
  * Selective indexing
- * Distributed crawling
-
 
 = Features =
 ===Native Notes application===
