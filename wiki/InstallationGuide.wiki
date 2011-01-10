@@ -101,17 +101,27 @@ _*Note*: If you want to use the custom stylesheet optimized for the Notes Connec
 
 ==Connector Installation==
 ===Create the Google Enterprise Connector For Lotus Notes databases===
-1. Copy the two templates (.NTF files) provided to your Notes client data directory and using the Domino Administrator client, sign them with a trusted ID. *Note*: You must rename the "google-access-control-xxx.ntf" file to "google-access-control.ntf"
+1. Copy the two templates (.NTF files) provided to your Notes client data directory
+2. Rename the file "google-access-control-xxx.ntf" to "google-access-control.ntf"
+3. Using the Domino Administrator client, sign them with a trusted ID. 
+4.	Before creating the database, the connector templates (google-connector.ntf and google-access-control.ntf) in the Domino Data  folder, need to be signed using the ID of the user that is going to run the connector using the Domino Administrator
+    Steps to sign the template
+     a.	Sign in to  the Domino Administrator with the User ID of the user that is going to run the connector
+     b.	Click on the “google-connector.ntf”
+     c.	Click on Tools-->Database-->Sign
+     d.	Click on OK
+
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/SignTemplate.JPG"/>
 
 The ID you sign the template with should have rights to run restricted agents on all servers where the Connector database is to be deployed and at least READER level access to all registered databases and their document sets.
 
-2.Create an instance of the Domino Connector database from the “google-connector-xxx.ntf” template in the root Notes data directory on your Domino server.
+5.Create an instance of the Domino Connector database from the “google-connector-xxx.ntf” template in the root Notes data directory on your Domino server.
 
 Upon initial creation the database will automatically open to a new setup form. An example screenshot is provided below.
 
 <img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/InitialScreen.png"/>
 
-3. Set the appropriate value for your Administrators group, and your log retention period.
+6. Set the appropriate value for your Administrators group, and your log retention period.
 
 ===Configure the GSA Settings===
  # Click on the Google Search Appliance Tab
