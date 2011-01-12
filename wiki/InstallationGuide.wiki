@@ -131,6 +131,11 @@ Upon initial creation the database will automatically open to a new setup form. 
 
 6. Set the appropriate value for your Administrators group, and your log retention period.
 
+7. Specify the User ID in the Programmability Restrictions section of the Current Server Document.
+Current Server Document-->Security-->Programmability Restrictions
+
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/AgentSignPriv.JPG"/>
+
 ===Configure the GSA Settings===
  # Click on the Google Search Appliance Tab
  # Enter the fully qualified host name of the appliance. The host name should include the Feeder listener’s port number and folder. This is *19900/xmlfeed*. For example 
