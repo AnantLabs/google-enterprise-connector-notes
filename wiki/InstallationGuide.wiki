@@ -102,14 +102,22 @@ _*Note*: If you want to use the custom stylesheet optimized for the Notes Connec
 ==Connector Installation==
 ===Create the Google Enterprise Connector For Lotus Notes databases===
 1. Copy the two templates (.NTF files) provided to your Notes client data directory
+
 2. Rename the file "google-access-control-xxx.ntf" to "google-access-control.ntf"
+
 3. Using the Domino Administrator client, sign them with a trusted ID. 
+
 4.	Before creating the database, the connector templates (google-connector.ntf and google-access-control.ntf) in the Domino Data  folder, need to be signed using the ID of the user that is going to run the connector using the Domino Administrator
     Steps to sign the template
+     
      a.	Sign in to  the Domino Administrator with the User ID of the user that is going to run the connector
+
      b.	Click on the “google-connector.ntf”
+
      c.	Click on Tools-->Database-->Sign
+
      d.	Click on OK
+
 
 <img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/SignTemplate.JPG"/>
 
