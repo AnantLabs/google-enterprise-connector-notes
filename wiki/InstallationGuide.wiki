@@ -6,7 +6,8 @@ The *Google Enterprise Connector For Lotus Notes* is installed entirely on your 
 
 You should install the connector to a domino server to which you have administrative access.
 
-==Lotus Notes Environment Preparation==
+== Pre-Installation Steps - ==
+===Lotus Notes Environment Preparation===
 You will need to complete the following tasks to install the connector.
 
 ===Install Dependent Java Libraries===
