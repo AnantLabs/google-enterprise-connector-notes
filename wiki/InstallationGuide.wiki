@@ -86,6 +86,8 @@ Enter the URL to the authorization agent in the Access Control database. The URL
 https://notes.yourdomain.com/google-access-control.nsf/AuthZ?OpenAgent
 }}}
 
+NOTE : While configuring the Connector SAML for nonlegacy mode, the IDP Entity ID Value to be given  is "LotusSAMLIssuer"
+
 An example of the Access Control form at the GSA is shown below:
 
 <img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Saml.png"/>
