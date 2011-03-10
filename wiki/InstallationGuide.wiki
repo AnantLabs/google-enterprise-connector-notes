@@ -191,12 +191,10 @@ Before a database can be registered with the connector for crawling, the host se
 4. Press the “Create Access Control Database” button. The access control database will now be created on your Domino server. The Access Control tab will now refresh and you will see the “Open Access Control Database” button. You can of course open the database when you need to using the “File-Database-Open” menu option from your Notes Client. 
 
 It is recommended that you now open the access control database, and select the System Setup menu option to reveal the access control setup profile. 
-  *Access Control Database Setup*
+* Access Control Database Setup*
 
 On the General Settings, enter the GSA Address and click on "Save"
-In the Security Manager Artifact consumer URL, enter the GSA Address and the Security Manager Assertion Consumer 
-
-URL. In case of Legacy AuthN Mode of the GSA is being used, give the URL as 
+In the Security Manager Artifact consumer URL, enter the GSA Address and the Security Manager Assertion Consumer URL. In case of Legacy AuthN Mode of the GSA is being used, give the URL as - 
 https://< gsa>/security-manager/SamlArtifactConsumer 
 
 Else in case of normal SM, give the URL as -
@@ -205,8 +203,7 @@ https://< gsa>//security-manager/samlassertionconsumer
 Click on "Save" 
 
 
-<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/SM_AssertionURL.jpg"/>
-
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/SM_AssertionURL.JPG"/>
 
 
 5. Click on the Advanced tab and enable the logging of authorization requests as shown below. This allows the system to record each incoming request from the GSA and the response. This is particularly useful for checking the incoming username format provided by the GSA.
