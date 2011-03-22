@@ -143,7 +143,11 @@ To register a new database, complete the following steps.
 
 4. Select the template to apply to this database using the button provided. See [Templates templates] for more information about template selection.
 
-5. Save the database using the button provided and exit. The next time the crawler runs the desired content will be added to the system. An example of the completed database parameters document is shown below:
+5. Choose the option for "Index Document ACLs". Select "Yes" if the ACLs for each document are to be fed to the GSA. The GSA will use these ACLs while Authorizing documents for search results. Select "No" if the ACLs are not to be fed to the GSA for each document. The GSA will use the Connector AuthZ agent for Authorization of Search Results
+
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Index_URL_DB.png"/>
+
+6. Save the database using the button provided and exit. The next time the crawler runs the desired content will be added to the system. An example of the completed database parameters document is shown below:
 
 <img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Database.png"/>
 
