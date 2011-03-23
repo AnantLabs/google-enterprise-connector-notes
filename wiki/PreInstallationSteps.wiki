@@ -39,7 +39,7 @@ The crawl and feed processes run as agents inside the Connector database. To ens
 ===Configure the GSA for Integration===
 The GSA will only accept information from your Domino servers if you have first identified them through the GSA admin console. To identify your servers complete the following steps.
 
-*NOTE: All screenshots are from GSA version 6.8. These screens are illustrative only, as the Google Enterprise Connector For Lotus Notes is backwards compatible with all supported versions.
+*NOTE: All screenshots are from GSA version 6.8. These screens are illustrative only, as the Google Enterprise Connector For Lotus Notes is compatible with versions of GSA 6.4 above.
 
 1. Log into the GSA as a user of type *Administrator*, and selected the "Crawl and Index" menu option. 
 
