@@ -88,7 +88,7 @@ An example of the Access Control form at the GSA is shown below:
 
 <img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Saml.png"/>
 
-====Configuration when Security Manager is enabled====
+====Configuration when Security Manager is enabled (GSA 6.4 and above)====
 
 1. Login to the GSA as an administrator user and select Universal Login Auth Mechanisms from the Serving menu and select the SAML Tab. Complete the four fields as described below:
 *Mechanism Name*
@@ -145,7 +145,7 @@ An example of the Access Control form at the GSA is shown below:
 
 _*Note*: If you want to use the custom stylesheet optimized for the Notes Connector, you should upload this to your frontend of choice on the GSA via Serving > Front Ends, using the stylesheet file *domino_stylesheet.xslt*. This is an example stylesheet that shows how you can use the meta data sent from the connector to server custom results at the GSA. Note: This stylesheet does not consider any other result type except Notes so it will need to be modified to present other data sources at the GSA in any production environment. 
 
-====Configuration when Security Manager is enabled====
+====Configuration when Security Manager is enabled (GSA 6.4 and above)====
 1. Login to the GSA as an administrator user and select Universal Login Auth Mechanism from the Serving menu. Select SAML Tab and configure the following four fields:- 
 Mechanism Name : Enter a name for the SAML Mechanism. For e.g. LotusSAML
 
