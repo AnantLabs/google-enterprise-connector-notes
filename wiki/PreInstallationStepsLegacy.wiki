@@ -8,7 +8,7 @@ You will need to complete the following tasks to install the connector.
 ===Install Dependent Java Libraries===
 The Connector uses the Jakarta Commons HttpClient software to post content to the GSA so before any feeding can begin, these files must be copied to your Domino Server.
 
-1. Download the Commons clients from the [http://hc.apache.org/httpclient-3.x/ Jakarta HTTP Client home page]. 
+1. Download the Commons clients from the [http://archive.apache.org/dist/httpcomponents/]. 
 
 You will need the following jars:
  * commons-codec-1.3.jar
@@ -52,6 +52,9 @@ The GSA will only accept information from your Domino servers if you have first 
 Note. To find the fully qualified host name of your own servers, refer to the Basics tab of your Server documents in the Domino directory. 
 
 3. Select the “Feeds” option from the “Crawl and Index” menu and confirm that the GSA is ready to accept content from your Notes server. Enter any IP Addresses from which the GSA can receive feeds, in a comma-separated format.
+
+
+=== GSA Serve Time Configurations===
 
 ===Configure the GSA for Authentication and Authorization===
 The Appliance supports a variety of options here including LDAP, forms based authentication, SSO, client certificates, and custom authentication schemes using the SAML standard. By default, the connector will be configured using the connector’s own implementation of the Google Authorization (AuthN) SPI. This implementation will authenticate users against the Domino directory on behalf of the GSA. To configure the GSA to use the Connectors AuthN implementation, complete the following steps.
