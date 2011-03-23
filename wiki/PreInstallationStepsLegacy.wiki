@@ -114,28 +114,3 @@ An example of the Access Control form at the GSA is shown below:
  # Save these settings with the “Save Setup” button and logout of the GSA admin console.
 
 _*Note*: If you want to use the custom stylesheet optimized for the Notes Connector, you should upload this to your frontend of choice on the GSA via Serving > Front Ends, using the stylesheet file *domino_stylesheet.xslt*. This is an example stylesheet that shows how you can use the meta data sent from the connector to server custom results at the GSA. Note: This stylesheet does not consider any other result type except Notes so it will need to be modified to present other data sources at the GSA in any production environment. 
-
-====Configuration when Security Manager is enabled (GSA 6.4 and above)====
-1. Login to the GSA as an administrator user and select Universal Login Auth Mechanism from the Serving menu. Select SAML Tab and configure the following four fields:- 
-Mechanism Name : Enter a name for the SAML Mechanism. For e.g. LotusSAML
-
-IDP Entity ID : Enter the value "LotusSAMLIssuer" 
-
-Authentication - User Login URL
-
-Enter the URL to the Login form in the Access Control database. The URL should take the form "https://" plus the "fully qualified Domino server hostname/" plus the "access control database path", and "/Login?OpenForm". For example:
-
-https://notes.yourdomain.com/google-access-control.nsf/Login?OpenForm  
-
-Authentication - Artifact Service URL
-
-Enter the URL to the authentication agent in the Access Control database. The URL should take the form "https://" plus the "fully qualified Domino server hostname/" plus the "access control database path”, and "/AuthN?OpenAgent". For example:
-
-https://notes.yourdomain.com/google-access-control.nsf/AuthN?OpenAgent
-2. Select Access Control from the Serving menu. Complete the three fields as described below:
-
-Authorization – Authorization Service URL
-
-Enter the URL to the authorization agent in the Access Control database. The URL should take the form "https://" plus the "fully qualified Domino server hostname/" plus the "access control database path", and "/AuthZ?OpenAgent". For example:
-
-https://notes.yourdomain.com/google-access-control.nsf/AuthZ?OpenAgent
