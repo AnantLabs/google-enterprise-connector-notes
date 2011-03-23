@@ -113,4 +113,6 @@ An example of the Access Control form at the GSA is shown below:
  # Set the “Force secure connections when serving?” field to “*Use HTTPS when serving secure results, but not when serving public results.*”.
  # Save these settings with the “Save Setup” button and logout of the GSA admin console.
 
-_*Note*: If you want to use the custom stylesheet optimized for the Notes Connector, you should upload this to your frontend of choice on the GSA via Serving > Front Ends, using the stylesheet file *domino_stylesheet.xslt*. This is an example stylesheet that shows how you can use the meta data sent from the connector to server custom results at the GSA. Note: This stylesheet does not consider any other result type except Notes so it will need to be modified to present other data sources at the GSA in any production environment. 
+===Customized Frontend Stylesheet for the GSA===
+
+If you want to use the custom stylesheet optimized for the Notes Connector, you should upload this to your frontend of choice on the GSA via Serving > Front Ends, using the stylesheet file *domino_stylesheet.xslt*. This is an example stylesheet that shows how you can use the meta data sent from the connector to server custom results at the GSA. Note: This stylesheet does not consider any other result type except Notes so it will need to be modified to present other data sources at the GSA in any production environment. 
