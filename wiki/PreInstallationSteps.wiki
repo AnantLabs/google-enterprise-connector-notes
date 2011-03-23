@@ -55,6 +55,8 @@ Note. To find the fully qualified host name of your own servers, refer to the Ba
 ===Configure the GSA for Authentication and Authorization===
 The Appliance supports a variety of options here including LDAP, forms based authentication, SSO, client certificates, and custom authentication schemes using the SAML standard. By default, the connector will be configured using the connector’s own implementation of the Google Authorization (AuthN) SPI. This implementation will authenticate users against the Domino directory on behalf of the GSA. To configure the GSA to use the Connectors AuthN implementation, complete the following steps.
 
+Please Note: For all the URLs below (Login, AuthN and AuthZ) use "https://" if Domino Server HTTP service is configured to run in secure. Else use "http//"
+
 ====Configuration in Legacy Mode====
 
 1. Login to the GSA as an administrator user and select Access Control from the Serving menu. Complete the three fields as described below:
@@ -66,6 +68,7 @@ Enter the URL to the Login form in the Access Control database. The URL should t
 {{{
 https://notes.yourdomain.com/google-access-control.nsf/Login?OpenForm  
 }}}
+
 
 *Authentication - Artifact Service URL*
 
