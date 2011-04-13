@@ -100,7 +100,7 @@ It is recommended that you now open the access control database, and select the 
 
 On the General Settings, enter the GSA Address and click on "Save"
 In the Security Manager Artifact consumer URL, enter the GSA Address and the Security Manager Assertion Consumer URL. In case of Legacy AuthN Mode of the GSA is being used, give the URL as - 
-https://< gsa>/security-manager/SamlArtifactConsumer 
+https://< gsa>/SamlArtifactConsumer 
 
 Else in case of normal SM, give the URL as -
 https://< gsa>//security-manager/samlassertionconsumer
