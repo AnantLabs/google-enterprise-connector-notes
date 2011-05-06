@@ -210,7 +210,7 @@ To register a new database, complete the following steps.
 
 5. Save the database using the button provided and exit. The next time the crawler runs the desired content will be added to the system. An example of the completed database parameters document is shown below:
 
-<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Database.png"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DatabasePrev.PNG"/>
 
 You are encouraged to read the page that covers [Templates template profile management] to gain a full appreciation of the options that are available to in the areas of selective indexing and document transformation.
 
