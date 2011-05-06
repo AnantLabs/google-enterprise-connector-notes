@@ -6,26 +6,110 @@ The *Google Enterprise Connector For Lotus Notes* is installed entirely on your 
 
 You should install the connector to a domino server to which you have administrative access.
 
+==Lotus Notes Environment Preparation==
+You will need to complete the following tasks to install the connector.
+
+===Install Dependent Java Libraries===
+The Connector uses the Jakarta Commons HttpClient software to post content to the GSA so before any feeding can begin, these files must be copied to your Domino Server.
+
+1. Download the Commons clients from the [http://hc.apache.org/httpclient-3.x/ Jakarta HTTP Client home page]. 
+
+You will need the following jars:
+ * commons-codec-1.3.jar
+ * commons-httpclient-3.0.jar
+ * commons-logging.jar
+
+_*Note:* You only need to deploy the jars to the Domino server on which the Connector is hosted. You do NOT need to deploy them to every Domino server._
+
+2. Copy them to your Domino Server's external Java classes’ folder. On a Microsoft Windows platform, this folder is the *“jvm\lib\ext”* folder, which is located beneath the Domino program folder. For example: If you install Domino to *“C:\Lotus\Domino”*, you would copy your jar files to: *“C:\Lotus\Domino\jvm\lib\ext”*.
+
+3. Update the security restrictions in the server’s *“java.policy”* file. This file is located beneath the Domino program folder in the *“jvm\lib\security”* folder. Edit the file and add the following permission line between the braces where other permissions are granted.
+
+{{{
+permission java.util.PropertyPermission "org.apache.commons.logging.simplelog.defaultlog", "write";
+}}}
+
+===Configure Notes Agents===
+The crawl and feed processes run as agents inside the Connector database. To ensure that the agents can complete without being prematurely terminated by the server’s agent manager, you should increase the *“Max Lotusscript`/`Java execution time”* daytime and nighttime parameters for any server that will be taking part in the crawl and feed process. 
+
+1. Increase the setting in your Domino server document to 360 minutes or higher. This setting can be found in your server document in the *“Agent Manager”* subsection under *“Server tasks”*. The screenshot below shows the *“Agent Manager”* tab in sample server document.
+
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/AgentSettings.png"/>
+
+
+2. Restart the Domino server for your changes to take effect.
+
+==GSA Configuration==
+===Configure the GSA for Integration===
+The GSA will only accept information from your Domino servers if you have first identified them through the GSA admin console. To identify your servers complete the following steps.
+
+*NOTE: All screenshots are from GSA version 6.2. These screens are illustrative only, as the Google Enterprise Connector For Lotus Notes is backwards compatible with all supported versions.
+
+1. Log into the GSA as a user of type *Administrator*, and selected the "Crawl and Index" menu option. 
+
+2.Complete the “Crawl URLs” section by adding the fully qualified host name of your Domino server. Below you can see how an example server is identified to the Appliance.
+
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/FollowAndCrawl.png" width="800"/>
+
+*Note: You must include the _"http://"_ prefix and the trailing forward slash _"/"_ *
+
+Note. To find the fully qualified host name of your own servers, refer to the Basics tab of your Server documents in the Domino directory. 
+
+3. Select the “Feeds” option from the “Crawl and Index” menu and confirm that the GSA is ready to accept content from your Notes server. Enter any IP Addresses from which the GSA can receive feeds, in a comma-separated format.
+
+===Configure the GSA for Authentication and Authorization===
+The Appliance supports a variety of options here including LDAP, forms based authentication, SSO, client certificates, and custom authentication schemes using the SAML standard. By default, the connector will be configured using the connector’s own implementation of the Google Authorization (AuthN) SPI. This implementation will authenticate users against the Domino directory on behalf of the GSA. To configure the GSA to use the Connectors AuthN implementation, complete the following steps.
+
+1. Login to the GSA as an administrator user and select Access Control from the Serving menu. Complete the three fields as described below:
+
+*Authentication - User Login URL*
+
+Enter the URL to the Login form in the Access Control database. The URL should take the form *"https://"* plus the *"fully qualified Domino server hostname/"* plus the *"access control database path"*, and *"/Login?OpenForm"*. For example:
+
+{{{
+https://notes.yourdomain.com/google-access-control.nsf/Login?OpenForm  
+}}}
+
+*Authentication - Artifact Service URL*
+
+Enter the URL to the authentication agent in the Access Control database. The URL should take the form *"https://"* plus the *"fully qualified Domino server hostname/"* plus the *"access control database path”*, and *"/AuthN?OpenAgent"*. For example:
+{{{
+https://notes.yourdomain.com/google-access-control.nsf/AuthN?OpenAgent
+}}}  
+ 
+*Authorization – Authorization Service URL*
+
+Enter the URL to the authorization agent in the Access Control database. The URL should take the form *"https://"* plus the *"fully qualified Domino server hostname/"* plus the *"access control database path"*, and *"/AuthZ?OpenAgent"*. For example:
+
+{{{
+https://notes.yourdomain.com/google-access-control.nsf/AuthZ?OpenAgent
+}}}
+
+An example of the Access Control form at the GSA is shown below:
+
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Saml.png"/>
+
+*Note: Both HTTP and HTTPS are supported. However, if you use HTTPS you must ensure that the GSA and your Domino servers can communicate over SSL. You should refer to the GSA Help and your Domino Administration Help database for more details on this subject.*
+
+===Set the serve protocol===
+
+ # From the “Administration” menu, select “SSL Settings”.
+ # Set the “Force secure connections when serving?” field to “*Use HTTPS when serving secure results, but not when serving public results.*”.
+ # Save these settings with the “Save Setup” button and logout of the GSA admin console.
+
+_*Note*: If you want to use the custom stylesheet optimized for the Notes Connector, you should upload this to your frontend of choice on the GSA via Serving > Front Ends, using the stylesheet file *domino_stylesheet.xslt*. This is an example stylesheet that shows how you can use the meta data sent from the connector to server custom results at the GSA. Note: This stylesheet does not consider any other result type except Notes so it will need to be modified to present other data sources at the GSA in any production environment. 
 
 ==Connector Installation==
 ===Create the Google Enterprise Connector For Lotus Notes databases===
 1. Copy the two templates (.NTF files) provided to your Notes client data directory
-
 2. Rename the file "google-access-control-xxx.ntf" to "google-access-control.ntf"
-
 3. Using the Domino Administrator client, sign them with a trusted ID. 
-
-4.	Before creating the database, the connector templates (google-connector.ntf and google-access-control.ntf) in the Domino Data  folder, need to be signed using the ID of the user that is going to run the connector using the Domino Administrator
+4.      Before creating the database, the connector templates (google-connector.ntf and google-access-control.ntf) in the Domino Data  folder, need to be signed using the ID of the user that is going to run the connector using the Domino Administrator
     Steps to sign the template
-     
-     a.	Sign in to  the Domino Administrator with the User ID of the user that is going to run the connector
-
-     b.	Click on the “google-connector.ntf”
-
-     c.	Click on Tools-->Database-->Sign
-
-     d.	Click on OK
-
+     a. Sign in to  the Domino Administrator with the User ID of the user that is going to run the connector
+     b. Click on the “google-connector.ntf”
+     c. Click on Tools-->Database-->Sign
+     d. Click on OK
 
 <img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/SignTemplate.JPG"/>
 
@@ -38,11 +122,6 @@ Upon initial creation the database will automatically open to a new setup form. 
 <img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/InitialScreen.png"/>
 
 6. Set the appropriate value for your Administrators group, and your log retention period.
-
-7. Specify the User ID in the Programmability Restrictions section of the Current Server Document.
-Current Server Document-->Security-->Programmability Restrictions
-
-<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/AgentSignPriv.JPG"/>
 
 ===Configure the GSA Settings===
  # Click on the Google Search Appliance Tab
@@ -96,20 +175,6 @@ Before a database can be registered with the connector for crawling, the host se
 4. Press the “Create Access Control Database” button. The access control database will now be created on your Domino server. The Access Control tab will now refresh and you will see the “Open Access Control Database” button. You can of course open the database when you need to using the “File-Database-Open” menu option from your Notes Client. 
 
 It is recommended that you now open the access control database, and select the System Setup menu option to reveal the access control setup profile. 
-* Access Control Database Setup*
-
-On the General Settings, enter the GSA Address and click on "Save"
-In the Security Manager Artifact consumer URL, enter the GSA Address and the Security Manager Assertion Consumer URL. In case of Legacy AuthN Mode of the GSA is being used, give the URL as - 
-https://< gsa>/SamlArtifactConsumer 
-
-Else in case of normal SM, give the URL as -
-https://< gsa>//security-manager/samlassertionconsumer
-
-Click on "Save" 
-
-
-<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/SM_AssertionURL.JPG"/>
-
 
 5. Click on the Advanced tab and enable the logging of authorization requests as shown below. This allows the system to record each incoming request from the GSA and the response. This is particularly useful for checking the incoming username format provided by the GSA.
 
@@ -143,9 +208,7 @@ To register a new database, complete the following steps.
 
 4. Select the template to apply to this database using the button provided. See [Templates templates] for more information about template selection.
 
-5. Choose the option for "Index Document ACLs". Select "Yes" if the ACLs for each document are to be fed to the GSA. The GSA will use these ACLs while Authorizing documents for search results. Select "No" if the ACLs are not to be fed to the GSA for each document. The GSA will use the Connector AuthZ agent for Authorization of Search Results
-
-6. Save the database using the button provided and exit. The next time the crawler runs the desired content will be added to the system. An example of the completed database parameters document is shown below:
+5. Save the database using the button provided and exit. The next time the crawler runs the desired content will be added to the system. An example of the completed database parameters document is shown below:
 
 <img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Database.png"/>
 
