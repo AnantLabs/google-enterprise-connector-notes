@@ -11,10 +11,18 @@ The Connector uses the Jakarta Commons HttpClient software to post content to th
 
 You will need the following jars:
  * commons-codec-1.3.jar
+http://archive.apache.org/dist/commons/codec/binaries/commons-codec-1.3.zip
+
  * commons-httpclient-3.0.jar
+http://archive.apache.org/dist/httpcomponents/commons-httpclient/3.0/binary/commons-httpclient-3.0.zip
+
  * commons-logging.jar
+http://archive.apache.org/dist/commons/logging/binaries/logging.1.0.zip
 
 _*Note:* You only need to deploy the jars to the Domino server on which the Connector is hosted. You do NOT need to deploy them to every Domino server._
+
+
+
 
 2. Copy them to your Domino Server's external Java classes’ folder. On a Microsoft Windows platform, this folder is the *“jvm\lib\ext”* folder, which is located beneath the Domino program folder. For example: If you install Domino to *“C:\Lotus\Domino”*, you would copy your jar files to: *“C:\Lotus\Domino\jvm\lib\ext”*.
 
