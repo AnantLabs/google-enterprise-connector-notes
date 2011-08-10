@@ -24,7 +24,7 @@ _*Note:* You only need to deploy the jars to the Domino server on which the Conn
 
 2. Copy them to your Domino Server's external Java classes’ folder. On a Microsoft Windows platform, this folder is the *“jvm\lib\ext”* folder, which is located beneath the Domino program folder. For example: If you install Domino to *“C:\Lotus\Domino”*, you would copy your jar files to: *“C:\Lotus\Domino\jvm\lib\ext”*.
 
-3. Update the security restrictions in the server’s *“java.policy”* file. This file is located beneath the Domino program folder in the *“jvm\lib\security”* folder. Edit the file and add the following permission line between the braces where other permissions are granted.
+3. Update the security restrictions in the server’s *“java.policy”* file. This file is located beneath the Domino program folder in the *“jvm\lib\security”* folder. Edit the file and add the following permission lines between the braces where other permissions are granted.
 
 {{{
 permission java.util.PropertyPermission "org.apache.commons.logging.simplelog.defaultlog", "write";
