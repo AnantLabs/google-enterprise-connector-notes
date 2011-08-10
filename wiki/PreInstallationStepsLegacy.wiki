@@ -28,6 +28,7 @@ _*Note:* You only need to deploy the jars to the Domino server on which the Conn
 
 {{{
 permission java.util.PropertyPermission "org.apache.commons.logging.simplelog.defaultlog", "write";
+permission java.util.logging.LoggingPermission "control";
 }}}
 
 ===Configure Notes Agents===
