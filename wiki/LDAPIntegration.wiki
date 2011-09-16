@@ -9,7 +9,7 @@ This can be useful when you wish to use NTLM as the default Authorization mechan
 
 1. In the Connector system setup profile, set your GSA authentication method to Http Basic or NTLM.
 
-<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/HTTPBasicForLDAP.png"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/wiki/images/HTTPBasicForLDAP.png"/>
 
 2. Create the Access Control database from the Access Control tab in the Connector system setup profile. As part of this process you must ensure that the system has a way to map a Notes name to the LDAP username. To achieve this mapping you must enter a formula or a Person document field name that the authorization system can use to map the logon name (as held at the GSA) to the Notes username. 
 

@@ -36,7 +36,7 @@ The crawl and feed processes run as agents inside the Connector database. To ens
 
 1. Increase the setting in your Domino server document to 360 minutes or higher. This setting can be found in your server document in the *“Agent Manager”* subsection under *“Server tasks”*. The screenshot below shows the *“Agent Manager”* tab in sample server document.
 
-<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/AgentSettings.png"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/wiki/images/AgentSettings.png"/>
 
 
 2. Restart the Domino server for your changes to take effect.
@@ -51,7 +51,7 @@ The GSA will only accept information from your Domino servers if you have first 
 
 2.Complete the “Crawl URLs” section by adding the fully qualified host name of your Domino server. Below you can see how an example server is identified to the Appliance.
 
-<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/FollowAndCrawl.png" width="800"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/wiki/images/FollowAndCrawl.png" width="800"/>
 
 *Note: You must include the _"http://"_ prefix and the trailing forward slash _"/"_ *
 
@@ -98,7 +98,7 @@ https://notes.yourdomain.com/google-access-control.nsf/AuthZ?OpenAgent
 
 An example of the Access Control form at the GSA is shown below:
 
-<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/Saml.png"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/wiki/images/Saml.png"/>
 
 2. Select Access Control from the Serving Menu and set the following:-
 *Authorization – Authorization Service URL*
@@ -112,7 +112,7 @@ https://notes.yourdomain.com/google-access-control.nsf/AuthZ?OpenAgent
 
 An example of the Access Control form at the GSA is shown below:
 
-<img src="http://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/AuthZ_GSA.PNG"/>
+<img src="http://google-enterprise-connector-notes.googlecode.com/svn/wiki/images/AuthZ_GSA.PNG"/>
 
 *Note: Both HTTP and HTTPS are supported. However, if you use HTTPS you must ensure that the GSA and your Domino servers can communicate over SSL. You should refer to the GSA Help and your Domino Administration Help database for more details on this subject.*
 

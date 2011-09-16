@@ -15,7 +15,7 @@ To rebuild the index for a single database, complete the following steps:
 4.  Press the "Edit button".
 5.  Press the "Roll-back" button. At this point the following dialogue will appear:
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/RebuildDB.png" width="600" height="200"/>
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/wiki/images/RebuildDB.png" width="600" height="200"/>
 
 If you wish to activate a full rebuild the index for the source database, press OK. Alternatively, you can roll the database back by a specific number of months, days, and hours. Rolling back is useful if your source database has become corrupt and a restore from backup has been made. In this instance you can wind the index back to a time shortly before the backup was taken. 
 

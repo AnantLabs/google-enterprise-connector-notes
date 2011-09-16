@@ -13,11 +13,11 @@ In centralized mode, the Connector is installed onto a single Domino server. As 
 
 For example, if the Connector database is installed onto a server named “Venus” and you wanted to index a database on “Saturn”, then you would update Saturn’s server document to include the server Venus in it’s “Trusted server” list. A screenshot is shown below, but please refer to your Domino Administrator guide for more details on configuring trusted servers.
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DistConfig.png" width="400" />
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/wiki/images/DistConfig.png" width="400" />
 
 This diagram shows how the crawl and feed process differs depending upon the mode selected.
 
-<img src="https://google-enterprise-connector-notes.googlecode.com/svn/trunk/res/DistCrawlDiagram.png" width="500"/>
+<img src="https://google-enterprise-connector-notes.googlecode.com/svn/wiki/images/DistCrawlDiagram.png" width="500"/>
 
 =Changing the master server for a database=
 To change the server that is responsible for indexing a particular database, complete the following steps.
