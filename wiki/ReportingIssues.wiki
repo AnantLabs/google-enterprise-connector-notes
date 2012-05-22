@@ -1,6 +1,6 @@
 #summary Reporting Issues with the Google Search Appliance Connector for Lotus Notes
 #labels Phase-Support
-===Reporting Issues with the Google Search Appliance Connector for Lotus Notes===
+*Reporting Issues with the Google Search Appliance Connector for Lotus Notes*
 
 For customers who qualify for enterprise-level support, Google
 provides support for the Google Search Appliance Connectors. You can
