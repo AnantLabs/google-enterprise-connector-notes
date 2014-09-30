@@ -1,4 +1,5 @@
 #summary Configure LDAP or Active Directory for Authentication
+#labels Deprecated
 
 =LDAP Authentication=
 One authentication method supported by the GSA is LDAP. Microsoft’s Active Directory is one such LDAP compliant directory. The following is a discussion on how to configure the GSA to use Active Directory as the authentication method for your Notes users, and then use the Access Control database supplied to provide the authorization mechanism.
