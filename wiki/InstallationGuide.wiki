@@ -2,7 +2,7 @@
 #labels Deprecated,Phase-Deploy
 
 = Installation Instructions =
-The *Google Search Appliance Connector For Lotus Notes* is installed entirely on your Domino infrastructure.
+The *Google Search Appliance Connector For Lotus Notes* version 2.6.10 and earlier is installed entirely on your Domino infrastructure.
 
 You should install the connector to a domino server to which you have administrative access.
 
