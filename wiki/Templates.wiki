@@ -3,7 +3,7 @@
 =Templates=
 *NOTE: This page contains instructions for configuration of Lotus Notes Templates. You should make sure you have access to a Notes Administrator to carry out these tasks.*
 
-Most crawlers for Notes only support full content crawling of a Notes database. Invariably however, a Notes database will contain documents and fields that are used only to support the Notes application itself. This information adds no value to the search experience and as such should be excluded from the search index. the Google Enterprise Connector for Lotus Notes offers this support through the use of its template profiles. 
+Most crawlers for Notes only support full content crawling of a Notes database. Invariably however, a Notes database will contain documents and fields that are used only to support the Notes application itself. This information adds no value to the search experience and as such should be excluded from the search index. the Google Search Appliance Connector for Lotus Notes offers this support through the use of its template profiles. 
 
 Without an understanding of the design of the Notes database it is difficult to know what information is of value and what isn’t and therefore the normal approach to building a searchable index is to crawl and extract every item on each Notes document. 
 
@@ -20,7 +20,7 @@ This approach has three main benefits. These are:
 
 ||Sample templates are provided with the connector for the more common types of Notes database such as Discussion, Team room, Document Library, Office Library, Mail files, Document Manager etc. For the lazy, there is even an “All documents and fields” template. These can be used as is or modified as required. You can also define your own profiles for any custom applications as required. ||
 
-Although the Google Enterprise Connector For Lotus Notes does support full content crawling through it’s *All documents and fields* template, the Connector also offers the far more effective selective content crawling by using template profiles to describe each type of database that will be crawled. These profiles tell the crawler which documents and fields to select as part of the crawl process for each assigned database. 
+Although the Google Search Appliance Connector For Lotus Notes does support full content crawling through it’s *All documents and fields* template, the Connector also offers the far more effective selective content crawling by using template profiles to describe each type of database that will be crawled. These profiles tell the crawler which documents and fields to select as part of the crawl process for each assigned database. 
 
 In addition to defining the documents and fields to include in the index, templates in the Connector database are used to define the key meta data values that are passed to the GSA for each Notes document. These are the document title and document description values.
 
