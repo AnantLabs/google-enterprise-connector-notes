@@ -1,14 +1,14 @@
-#summary Install the Google Enterprise Connector for Lotus Notes
-#labels Featured,Phase-Deploy
+#summary Install the Google Search Appliance Connector for Lotus Notes
+#labels Deprecated,Phase-Deploy
 
 = Installation Instructions =
-The *Google Enterprise Connector For Lotus Notes* is installed entirely on your Domino infrastructure.
+The *Google Search Appliance Connector For Lotus Notes* is installed entirely on your Domino infrastructure.
 
 You should install the connector to a domino server to which you have administrative access.
 
 
 ==Connector Installation==
-===Create the Google Enterprise Connector For Lotus Notes databases===
+===Create the Google Search Appliance Connector For Lotus Notes databases===
 1. Copy the two templates (.NTF files) provided to your Notes client data directory
 
 2. Rename the file "google-access-control-xxx.ntf" to "google-access-control.ntf"
