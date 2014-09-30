@@ -1,10 +1,10 @@
-#summary Start here to explore the Google Enterprise Connector for Lotus Notes!
-#labels Featured
+#summary Start here to explore the Google Search Appliance Connector for Lotus Notes!
+#labels Deprecated
 
 = Introduction =
-The Google Enterprise Connector for Lotus Notes allows you to easily integrate content securely with Lotus Notes, seamlessly integrating your Notes content with the rest of your enterprise content.
+The Google Search Appliance Connector for Lotus Notes allows you to easily integrate content securely with Lotus Notes, seamlessly integrating your Notes content with the rest of your enterprise content.
 
-The Google Enterprise Connector for Lotus Notes is a secure, highly flexible crawler for Notes that connects your Domino servers to the GSA, using a crawler which has been fully tested and approved by IBM Laboratories. This software was designed and developed by Notes developers with an in depth understanding of the design structure, principles and advantages of the Notes database environment. As such the system has a number of features rarely seen in a Notes database crawler.
+The Google Search Appliance Connector for Lotus Notes is a secure, highly flexible crawler for Notes that connects your Domino servers to the GSA, using a crawler which has been fully tested and approved by IBM Laboratories. This software was designed and developed by Notes developers with an in depth understanding of the design structure, principles and advantages of the Notes database environment. As such the system has a number of features rarely seen in a Notes database crawler.
 
 Read the core [InstallationGuide Installation Guide] now.
 
