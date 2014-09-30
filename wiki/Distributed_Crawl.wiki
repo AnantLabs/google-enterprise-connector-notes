@@ -1,4 +1,5 @@
 #summary The Connector supports two deployment modes, “centralized” and “distributed” which is chosen as part of the setup process
+#labels Deprecated
 
 ==Deployment of the Connector – Distributed crawler mode==
 
