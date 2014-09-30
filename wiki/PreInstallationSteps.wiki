@@ -1,4 +1,5 @@
 #summary Pre-Install settings for the Google Search Appliance Connector for Lotus Notes
+#labels Deprecated
 
 == Pre-Installation Steps - ==
 ===Lotus Notes Environment Preparation===
